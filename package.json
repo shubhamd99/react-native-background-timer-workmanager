@@ -1,6 +1,6 @@
 {
   "name": "react-native-background-timer-workmanager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Emit event periodically in both foreground and background",
   "keywords": [
     "react-native",
