@@ -1,0 +1,54 @@
+{
+  "name": "react-native-background-timer-workmanager",
+  "version": "1.0.0",
+  "description": "Emit event periodically in both foreground and background",
+  "keywords": [
+    "react-native",
+    "background",
+    "timer",
+    "android",
+    "work",
+    "manager",
+    "latest"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint *.js",
+    "eslint:fix": "yarn eslint --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamdhage99/react-native-background-timer-workmanager.git"
+  },
+  "author": "Shubham Dhage",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.1",
+    "react": "17.0.2",
+    "react-native": "^0.68.1",
+    "yarn": "1.22.18"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
