@@ -6,6 +6,11 @@ const Emitter = new NativeEventEmitter(RNBackgroundTimer);
 const EVENT_NAME = 'BackgroundPollingCallback';
 
 class BackgroundTimer {
+  constructor() {
+    this.eventListener = null;
+    this.tags = {};
+  }
+
   /**
    *
    * @param {number} delay
@@ -14,6 +19,14 @@ class BackgroundTimer {
    */
   start(delay, pollingWorkerTag, callback) {
     if (delay) {
+      if (this.tags[pollingWorkerTag]) {
+        if (this.eventListener) {
+          this.eventListener.remove();
+        }
+        delete this.tags[pollingWorkerTag];
+      }
+
+      this.tags[pollingWorkerTag] = true;
       RNBackgroundTimer.startPolling(delay, pollingWorkerTag);
       this.eventListener = Emitter.addListener(EVENT_NAME, () => {
         callback();

@@ -62,5 +62,29 @@ Emit event periodically in both foreground and background.
 import BackgroundTimer from 'react-native-background-timer-workmanager';
 ```
 
+```js
+BackgroundTimer.start(3000, 'UNIQUE_TAG' () => { 
+// code that will be called every 3 seconds 
+});
+
+BackgroundTimer.stop('UNIQUE_TAG'); // To Stop Polling
+```
+
+Example:
+```js
+import React, {useEffect} from 'react';
+
+const App = () => {
+    useEffect(() => {
+        BackgroundTimer.start(10000, 'homeScreenPolling', () => {
+            console.log('polling..');
+        });
+        return () => BackgroundTimer.stop('homeScreenPolling');
+    }, []);
+};
+
+export default App;
+```
+
 
 

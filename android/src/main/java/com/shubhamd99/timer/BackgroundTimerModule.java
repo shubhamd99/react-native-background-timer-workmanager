@@ -27,6 +27,10 @@ public class BackgroundTimerModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void startPolling(final int delay, final String pollingWorkerTag) {
+        PollingWorker.clearPollingWorker(
+                reactContext,
+                pollingWorkerTag
+        );
         PollingWorker.startPollingWorker(
                 reactContext,
                 delay,

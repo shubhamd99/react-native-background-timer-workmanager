@@ -53,7 +53,7 @@ public class PollingWorker extends Worker {
 
         WorkManager.getInstance(context).enqueueUniqueWork(
                 pollingWorkerKey,
-                ExistingWorkPolicy.APPEND,
+                ExistingWorkPolicy.REPLACE,
                 pollingWorkerRequest
         );
 
