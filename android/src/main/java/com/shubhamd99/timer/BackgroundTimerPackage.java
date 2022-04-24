@@ -12,9 +12,6 @@ import java.util.List;
 
 public class BackgroundTimerPackage implements ReactPackage {
 
-    public BackgroundTimerPackage() {
-    }
-
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         List<NativeModule> modules = new ArrayList<>();
